@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="ar">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
   <title>ANONYMOUS - الدعوة</title>
   <script src="https://cdn.jsdelivr.net/npm/emailjs-com@2.6.4/dist/email.min.js"></script>
   <script>
@@ -11,104 +11,111 @@
   </script>
   <style>
     body {
-      background-image: url('https://i.imgur.com/6M5134r.jpeg');
-      background-size: cover;
-      background-position: center;
-      background-attachment: fixed;
-      margin: 0;
-      color: #00ffcc;
+      background-color: #000;
+      color: #00ff00; /* لون أخضر كود التهكير */
       font-family: 'Courier New', monospace;
-      overflow: hidden;
-    }
-    .overlay {
-      background-color: rgba(0, 0, 0, 0.85);
       padding: 40px;
-      margin: 50px auto;
-      width: 90%;
-      max-width: 600px;
-      border-radius: 10px;
       text-align: center;
-      box-shadow: 0 0 30px red;
+      overflow: hidden;
+      position: relative;
     }
+    /* خطوط رمادية شفافة تتحرك للخلف لإيحاء حركة */
+    .matrix {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: -1;
+      font-family: monospace;
+      font-size: 14px;
+      line-height: 14px;
+      color: #00ff00aa;
+      white-space: nowrap;
+      overflow: hidden;
+      animation: scrollMatrix 10s linear infinite;
+    }
+    @keyframes scrollMatrix {
+      0% { transform: translateY(100%); }
+      100% { transform: translateY(-100%); }
+    }
+
     .title {
-      font-size: 28px;
+      font-size: 26px;
       font-weight: bold;
       margin-bottom: 20px;
-      color: #ff0000;
-      letter-spacing: 3px;
+      color: #00ff00;
+      letter-spacing: 2px;
+      text-shadow: 0 0 5px #00ff00;
     }
     .message {
       font-size: 20px;
       margin-bottom: 30px;
-      line-height: 1.8;
+      line-height: 1.6;
+      text-shadow: 0 0 5px #00ff00;
     }
     button {
       background: none;
-      border: 2px solid #00ffcc;
-      color: #00ffcc;
+      border: 2px solid #00ff00;
+      color: #00ff00;
       font-size: 18px;
-      padding: 10px 30px;
+      padding: 10px 25px;
       margin: 10px;
       cursor: pointer;
       transition: 0.3s;
+      text-shadow: 0 0 5px #00ff00;
     }
     button:hover {
-      background: #00ffcc;
+      background: #00ff00;
       color: #000;
-    }
-    img.logo {
-      width: 130px;
-      margin-bottom: 20px;
-      filter: grayscale(100%);
-    }
-    .shake {
-      animation: shake 0.6s;
-    }
-    @keyframes shake {
-      0% { transform: translate(0px, 0px); }
-      20% { transform: translate(-5px, 5px); }
-      40% { transform: translate(5px, -5px); }
-      60% { transform: translate(-5px, -5px); }
-      80% { transform: translate(5px, 5px); }
-      100% { transform: translate(0px, 0px); }
     }
   </style>
 </head>
 <body>
-  <audio autoplay hidden>
-    <source src="https://www.soundjay.com/horror/sounds/scary-sound-1.mp3" type="audio/mp3">
-  </audio>
-
-  <div class="overlay" id="box">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/33/Anonymous_emblem.svg/2048px-Anonymous_emblem.svg.png" class="logo" alt="Anonymous Logo">
-    <div class="title">ANONYMOUS - الدعوة</div>
-    <div class="message">
-      📡 تم اعتراض إشارتك<br><br>
-      شخصيتك معروفة. موقعك تم تحديده. ذهنك تم فحصه.<br><br>
-      اختيارك لم يكن صدفة... لقد تم اختيارك لتنفيذ مهمة في القطاع العسكري الأكثر سرية: <b>SDF</b>.<br><br>
-      🕯️ <b>الموعد:</b> <i>قبل ضوء القمر</i><br>
-      ❓ <b>المكان:</b> <i>سيُكشف بعد اتخاذ القرار</i><br><br>
-      ⚠️ <b>إجابتك نهائية</b> ولا يمكن التراجع عنها.<br>
-      هل تقبل الدخول؟
-    </div>
-    <button onclick="sendResponse('نعم - قَبِل المهمة')">نعم</button>
-    <button onclick="sendResponse('لا - رفض المهمة')">لا</button>
+  <!-- تأثير تهكير بسيط -->
+  <div class="matrix">
+    1010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010
+    <br>
+    0101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101
+    <br>
+    11110000111100001111000011110000111100001111000011110000111100001111000011110000111100001111000011110000111100001111
+    <br>
+    00001111000011110000111100001111000011110000111100001111000011110000111100001111000011110000111100001111000011110000
+    <br>
+    10101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010
+    <br>
+    01010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101
+    <br>
+    11110000111100001111000011110000111100001111000011110000111100001111000011110000111100001111000011110000111100001111
+    <br>
+    00001111000011110000111100001111000011110000111100001111000011110000111100001111000011110000111100001111000011110000
   </div>
+
+  <div class="title">ANONYMOUS - الدعوة</div>
+  <div class="message">
+    📡 تم اعتراض إشارتك...<br><br>
+    لقد تم اختيارك لمهمة سرية ضمن القطاع العسكري <b>SDF</b>.<br><br>
+    الموعد: <i>قبل ضوء القمر</i><br>
+    المكان: <i>يُكشف بعد قبولك</i><br><br>
+    إجابتك نهائية ولا يمكن تغييرها.<br>
+    هل تقبل الانضمام؟
+  </div>
+  <button onclick="sendResponse('نعم - قبول المهمة')">نعم</button>
+  <button onclick="sendResponse('لا - رفض المهمة')">لا</button>
 
   <script>
     function sendResponse(answer) {
+      // تعطيل الأزرار لمنع تغيير الرد
       document.querySelectorAll('button').forEach(btn => btn.disabled = true);
-      document.getElementById('box').classList.add('shake');
 
       emailjs.send("service_jfwr617", "template_hxf08dl", {
         user_reply: answer,
         to_email: "abdallahpccc@gmail.com"
       }).then(() => {
-        setTimeout(() => {
-          alert("تم تسجيل ردّك... ترقّب ظهور التعليمات القادمة.");
-        }, 1000);
+        alert("تم تسجيل ردك بنجاح. ترقب التعليمات القادمة.");
       }, (error) => {
-        alert("حدث خطأ أثناء الإرسال.");
+        alert("حدث خطأ أثناء الإرسال، حاول مرة أخرى.");
         console.error(error);
       });
     }
